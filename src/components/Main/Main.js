@@ -10,10 +10,11 @@ const taskList = document.querySelector('.list-task');
 export const main = () => {
     taskForm.addEventListener('submit', e => {
         e.preventDefault()
-        const task = inputTask.value;
+        const task = {taskValue : inputTask.value};
+        const { taskValue } = task;
 
         inputTask.value = '';
-        taskList.append(Task(task));
+        taskList.append(Task(taskValue));
         taskItens = document.querySelectorAll('.task-item');
 
         taskItens.forEach(task => {
